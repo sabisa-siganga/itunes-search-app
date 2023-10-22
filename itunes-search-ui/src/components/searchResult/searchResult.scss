@@ -1,0 +1,51 @@
+h1 {
+  font-size: 25px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.result-container {
+  display: flex;
+  column-gap: 30px;
+  margin: 0 auto;
+  width: 560px;
+  padding: 12px 19px;
+  box-shadow: 1px 1px 9px 1px rgb(0 0 0 / 42%);
+  border-radius: 5px;
+  justify-content: space-between;
+
+  .result-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .info {
+      h1 {
+        font-size: 20px;
+        font-weight: 500;
+        text-align: left;
+      }
+      h2 {
+        font-size: 17px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  button {
+    border: none;
+    background: #fff;
+  }
+
+  .red {
+    color: rgb(248, 11, 11);
+  }
+}

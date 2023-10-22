@@ -1,0 +1,46 @@
+.header-container {
+  max-width: 490px;
+  display: flex;
+  margin: 0 auto;
+  column-gap: 25px;
+  align-items: center;
+
+  .search-bar {
+    display: flex;
+    width: 100%;
+    input {
+      width: 500px;
+      height: 40px;
+      border-radius: 5px 0 0 5px;
+      border: 2px solid #000;
+      padding-left: 10px;
+    }
+
+    button {
+      height: 40px;
+      width: 50px;
+      border-radius: 0 5px 5px 0;
+      background: #000;
+      color: #fff;
+    }
+  }
+
+  .fav-btn-container {
+    .fav-btn {
+      background: #fff;
+      color: #000;
+      width: 45px;
+      height: 40px;
+      display: block;
+      border: 2px solid #000;
+      border-radius: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .red {
+      color: rgb(250, 13, 13);
+      border-color: rgb(250, 13, 13);
+    }
+  }
+}
