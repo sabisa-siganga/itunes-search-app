@@ -9,7 +9,7 @@ const { checkResult } = require("./utils");
 const app = express();
 
 // Setting a port, use process.env.PORT if available, or default to 8080
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3001;
 
 // Use Helmet middleware
 app.use(helmet());
@@ -111,7 +111,7 @@ app.delete("/favourites/:id", (req, res) => {
 
   // Find item index
   const itemIndex = resultItems.findIndex(
-    (item) => item.id === parseInt(itemId)
+    (item) => item.id === parseInt(itemId),
   );
 
   // Checking if the index has been found the delete the item
