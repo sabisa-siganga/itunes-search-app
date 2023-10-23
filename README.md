@@ -2,6 +2,9 @@
 
 ## Deployment link:
 
+Frontend: https://pd7yqt-3000.csb.app/
+API: https://pd7yqt-3001.csb.app/
+
 ## Introduction
 
 This is the backend of my project. It provides the server-side functionality and APIs to support my application. It's responsible for handling requests to the itunes api.

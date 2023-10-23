@@ -1,9 +1,11 @@
+// styling the title
 h1 {
   font-size: 25px;
   font-weight: 400;
   text-align: center;
 }
 
+// styling the result-container
 .result-container {
   display: flex;
   column-gap: 30px;
@@ -14,12 +16,14 @@ h1 {
   border-radius: 5px;
   justify-content: space-between;
 
+  // styling the result item
   .result-item {
     display: flex;
     justify-content: center;
     align-items: center;
     column-gap: 30px;
 
+    // adding style on image
     img {
       width: 100px;
       height: 100px;
@@ -28,11 +32,13 @@ h1 {
     }
 
     .info {
+      // styling the title
       h1 {
         font-size: 20px;
         font-weight: 500;
         text-align: left;
       }
+      // styling the title
       h2 {
         font-size: 17px;
         font-weight: 400;
@@ -40,11 +46,13 @@ h1 {
     }
   }
 
+  // styling the button
   button {
     border: none;
     background: #fff;
   }
 
+  // styling the red class
   .red {
     color: rgb(248, 11, 11);
   }

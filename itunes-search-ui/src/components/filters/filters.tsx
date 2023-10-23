@@ -8,6 +8,7 @@ interface Category {
   isSelected: boolean;
 }
 
+// interface for props
 interface Props {
   onSelectedCategory: (selectedCategory: string) => void;
 }
@@ -16,8 +17,10 @@ interface Props {
  * Displaying the categories
  */
 function Filters(props: Props) {
+  // props destructuring
   const { onSelectedCategory } = props;
-  // movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook
+
+  // state
   const [categories, setCategories] = useState<Category[]>([
     // list of categories
     {
@@ -73,18 +76,20 @@ function Filters(props: Props) {
   ]);
 
   /**
-   *
+   *Marking the selected category as true using its index from the array and marking every other category as false
    */
   const onFilter = (categoryIndex: number) => {
     const updatedCategories: Category[] = [];
     let selectedCategory: string = "";
 
+    // searching for the selected index
     categories.forEach((category, index) => {
       category = {
         ...category,
         isSelected: categoryIndex === index,
       };
 
+      // check for the selected category
       if (category.isSelected) {
         selectedCategory = category.value;
       }
@@ -92,13 +97,16 @@ function Filters(props: Props) {
       updatedCategories.push(category);
     });
 
+    // updating the state
     setCategories(updatedCategories);
+
     onSelectedCategory(selectedCategory);
   };
 
   return (
     <div className="filters-container mb-5">
       <ul>
+        {/* displaying the categories */}
         {categories.map((category, index) => (
           <li
             className={`py-1 ${category.isSelected ? "selected" : ""}`}

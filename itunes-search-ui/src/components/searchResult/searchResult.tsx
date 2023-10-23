@@ -1,6 +1,7 @@
 import React from "react";
 import "./searchResult.scss";
 
+// inteface for Result
 export interface Result {
   id: number;
   image: string;
@@ -8,6 +9,7 @@ export interface Result {
   author: string;
 }
 
+// interface for props
 interface Props {
   id: number;
   image: string;
@@ -17,9 +19,15 @@ interface Props {
   showingFav: boolean;
 }
 
+/**
+ * Searching for the results
+ */
 function SearchResult(props: Props) {
   let { id, image, title, showingFav, author, updateFavourites } = props;
 
+  /**
+   * Deleting the item from the list of favourites
+   */
   async function deleteFavorite() {
     const itemUrl = `/favourites/${id}`;
 
@@ -32,12 +40,16 @@ function SearchResult(props: Props) {
       });
       const results = await response.json();
 
+      // updating the state
       updateFavourites(results.favourites);
     } catch (err) {
       console.error(err);
     }
   }
 
+  /**
+   * Adding the item to the list of favourites
+   */
   async function onAdd() {
     try {
       const response = await fetch("/favourites", {
@@ -51,13 +63,14 @@ function SearchResult(props: Props) {
           author: author,
         }),
       });
-      const results = await response.json();
-      console.log(results);
     } catch (err) {
       console.error(err);
     }
   }
 
+  /**
+   * Adding an item to favourites when showingFav is true, otherwise delete the item
+   */
   async function onFavClick() {
     if (showingFav) {
       await deleteFavorite();
@@ -69,12 +82,14 @@ function SearchResult(props: Props) {
   return (
     <div className="result-container mb-3 ">
       <div className="result-item">
+        {/* displaying the result item */}
         <img src={image} alt="img" />
         <div className="info">
           <h1 data-testid="title">{title}</h1>
           <h2 data-testid="author">{author}</h2>
         </div>
       </div>
+      {/* favourite button */}
       <button onClick={onFavClick} className={showingFav ? "red" : "black"}>
         <span className="material-symbols-outlined">favorite</span>
       </button>

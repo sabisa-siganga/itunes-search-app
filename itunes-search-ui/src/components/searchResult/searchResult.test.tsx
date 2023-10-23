@@ -2,9 +2,9 @@ import { render, screen } from "@testing-library/react";
 import SearchResult, { Result } from "./searchResult";
 import renderer from "react-test-renderer";
 
-// creating a test suited for the filters component
+// creating a test suited for the SearchResult component
 describe("Renders: <SearchResult />", () => {
-  // object that represents a category item
+  // object that represents a result item
   let resultItem = {
     id: 1,
     image:
@@ -17,7 +17,7 @@ describe("Renders: <SearchResult />", () => {
     console.log(data);
   };
   it("renders SearchResult component", () => {
-    // rendering filter component
+    // rendering Searchresult component
     render(
       <SearchResult
         id={resultItem.id}
@@ -29,6 +29,7 @@ describe("Renders: <SearchResult />", () => {
       />
     );
 
+    // accessing image, title and author elements
     const imageElem = screen.getByRole("img");
     const titleElem = screen.getByTestId("title");
     const authorElem = screen.getByTestId("author");

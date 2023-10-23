@@ -1,7 +1,9 @@
+// style of the container containing categories
 .filters-container {
   max-width: 720px;
   margin: 0 auto;
 
+  // styling the ul
   ul {
     display: flex;
     column-gap: 20px;
@@ -14,6 +16,7 @@
     flex-wrap: wrap;
     padding-left: 0;
 
+    // styling the li
     li {
       width: 100px;
       height: 35px;
@@ -22,12 +25,15 @@
       border: 2px solid #000;
       border-radius: 34px;
 
+      // styling the selected class
       &.selected {
         background: #000;
         color: #fff;
       }
     }
   }
+
+  // adding style to the selected class
   .selected {
     border: 2px solid #000;
     color: #fff;

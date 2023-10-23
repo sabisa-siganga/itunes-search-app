@@ -1,3 +1,4 @@
+// styling the header-container
 .header-container {
   max-width: 500px;
   display: flex;
@@ -6,10 +7,12 @@
   justify-content: center;
   align-items: center;
 
+  // styling the search-bar
   .search-bar {
     display: flex;
     width: 100%;
 
+    // styling the input
     input {
       width: 100%;
       height: 40px;
@@ -18,6 +21,7 @@
       padding-left: 10px;
     }
 
+    // styling the  button
     button {
       height: 40px;
       width: 50px;
@@ -28,6 +32,7 @@
   }
 
   .fav-btn-container {
+    // styling the fav-btn
     .fav-btn {
       background: #fff;
       color: #000;
@@ -40,6 +45,8 @@
       justify-content: center;
       align-items: center;
     }
+
+    // styling the red class
     .red {
       color: rgb(250, 13, 13);
       border-color: rgb(250, 13, 13);
