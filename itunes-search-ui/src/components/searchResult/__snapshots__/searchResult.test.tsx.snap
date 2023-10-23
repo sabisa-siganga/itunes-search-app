@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders: <SearchResult /> taking a snapshot 1`] = `
+<div
+  className="result-container mb-3 "
+>
+  <div
+    className="result-item"
+  >
+    <img
+      alt="img"
+      src="https://images.unsplash.com/photo-1697807650304-907257330a3e?auto=format&fit=crop&q=60&w=700&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D"
+    />
+    <div
+      className="info"
+    >
+      <h1
+        data-testid="title"
+      >
+        Only You
+      </h1>
+      <h2
+        data-testid="author"
+      >
+        Rita Ora
+      </h2>
+    </div>
+  </div>
+  <button
+    className="black"
+    onClick={[Function]}
+  >
+    <span
+      className="material-symbols-outlined"
+    >
+      favorite
+    </span>
+  </button>
+</div>
+`;

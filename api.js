@@ -1,13 +1,18 @@
 // creating express server
 const express = require("express");
 
-// const fetch = require("fetch");
+// importing helmet
+const helmet = require("helmet");
+const { checkResult } = require("./utils");
 
 // initializing express to app variable
 const app = express();
 
 // Setting a port, use process.env.PORT if available, or default to 8080
-const PORT = process.env.PORT || 8086;
+const PORT = process.env.PORT || 8080;
+
+// Use Helmet middleware
+app.use(helmet());
 
 // using middleware to parse JSON data
 app.use(express.json());
@@ -72,16 +77,7 @@ app.get("/itunes-search", async (req, res) => {
 app.post("/favourites", (req, res) => {
   const favouritesItem = req.body;
 
-  const check = resultItems.find((item) => {
-    if (
-      item.author === favouritesItem.author &&
-      item.title === favouritesItem.title
-    ) {
-      return true;
-    }
-
-    return false;
-  });
+  const check = checkResult(resultItems, favouritesItem);
 
   if (!check) {
     //   creating the next id

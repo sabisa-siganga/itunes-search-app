@@ -69,10 +69,10 @@ function SearchResult(props: Props) {
   return (
     <div className="result-container mb-3 ">
       <div className="result-item">
-        <img src={image} alt="pic" />
+        <img src={image} alt="img" />
         <div className="info">
-          <h1>{title}</h1>
-          <h2>{author}</h2>
+          <h1 data-testid="title">{title}</h1>
+          <h2 data-testid="author">{author}</h2>
         </div>
       </div>
       <button onClick={onFavClick} className={showingFav ? "red" : "black"}>

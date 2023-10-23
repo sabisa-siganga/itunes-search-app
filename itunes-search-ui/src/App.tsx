@@ -6,7 +6,7 @@ import SearchResult, { Result } from "./components/searchResult/searchResult";
 
 function App() {
   const [showFavourites, setshowFavourites] = useState(false);
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categories, setCategories] = useState<string>("");
   const searchRef = useRef<Result[]>([]);
   const [results, setResults] = useState<Result[]>([]);
 
@@ -32,15 +32,15 @@ function App() {
     setshowFavourites(!showFavourites);
   };
 
-  const updateCategories = (catagoryList: string[]) => {
-    setCategories(catagoryList);
+  const updateCategory = (catagory: string) => {
+    setCategories(catagory);
   };
 
   async function fetchItunes(inputValue: string) {
     try {
       setshowFavourites(false);
       const response = await fetch(
-        `/itunes-search?term=${inputValue}&media=${categories.toString()}`
+        `/itunes-search?term=${inputValue}&media=${categories}`
       );
       const results = await response.json();
       console.log(results);
@@ -62,7 +62,7 @@ function App() {
         onSearch={fetchItunes}
         showFavourites={showFavourites}
       />
-      <Filters onSelectedCategories={updateCategories} />
+      <Filters onSelectedCategory={updateCategory} />
 
       <h1 className="mb-5">
         {showFavourites ? "Favourites" : "Search Results"}

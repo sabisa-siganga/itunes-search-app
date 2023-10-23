@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./filters.scss";
 
+// interface for category
 interface Category {
   label: string;
   value: string;
@@ -8,13 +9,17 @@ interface Category {
 }
 
 interface Props {
-  onSelectedCategories: (selectedCategories: string[]) => void;
+  onSelectedCategory: (selectedCategory: string) => void;
 }
 
+/**
+ * Displaying the categories
+ */
 function Filters(props: Props) {
-  const { onSelectedCategories } = props;
+  const { onSelectedCategory } = props;
   // movie, podcast, music, musicVideo, audiobook, shortFilm, tvShow, software, ebook
   const [categories, setCategories] = useState<Category[]>([
+    // list of categories
     {
       label: "All",
       value: "all",
@@ -67,9 +72,12 @@ function Filters(props: Props) {
     },
   ]);
 
+  /**
+   *
+   */
   const onFilter = (categoryIndex: number) => {
     const updatedCategories: Category[] = [];
-    const selectedCategories: string[] = [];
+    let selectedCategory: string = "";
 
     categories.forEach((category, index) => {
       category = {
@@ -78,15 +86,14 @@ function Filters(props: Props) {
       };
 
       if (category.isSelected) {
-        selectedCategories.push(category.value);
+        selectedCategory = category.value;
       }
 
       updatedCategories.push(category);
     });
 
-    onSelectedCategories(selectedCategories);
-
     setCategories(updatedCategories);
+    onSelectedCategory(selectedCategory);
   };
 
   return (
