@@ -1,6 +1,8 @@
 // creating express server
 const express = require("express");
-
+// mod.cjs
+const fetch = (...args) =>
+  import("node-fetch").then(({ default: fetch }) => fetch(...args));
 // importing helmet
 const helmet = require("helmet");
 const { checkResult } = require("./utils");
@@ -40,7 +42,7 @@ app.get("/itunes-search", async (req, res) => {
       term: term,
       media: media,
       //   entity: entity,
-      limit: 25,
+      limit: limit || 25,
     };
     console.log(term);
 
