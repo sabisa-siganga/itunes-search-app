@@ -25,7 +25,7 @@ function SearchBar(props: Props) {
   };
 
   return (
-    <div className="header-container my-5">
+    <div className="header-container mt-5 mb-4">
       <div className="search-bar ">
         <input type="text" onChange={onChange} />
         <button className="btn btn-dark" onClick={onClick}>

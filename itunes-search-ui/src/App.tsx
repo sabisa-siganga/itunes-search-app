@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import "./App.css";
+import "./App.scss";
 import SearchBar from "./components/searchBar/searchBar";
 import Filters from "./components/filters/filters";
 import SearchResult, { Result } from "./components/searchResult/searchResult";
@@ -82,6 +82,12 @@ function App() {
             />
           );
         })}
+
+        {results.length === 0 && (
+          <div className="no-results">
+            {!showFavourites ? "No results" : "Haven't added any favs"}{" "}
+          </div>
+        )}
       </div>
     </div>
   );

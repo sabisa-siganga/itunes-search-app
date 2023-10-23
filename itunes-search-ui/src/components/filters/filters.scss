@@ -1,4 +1,7 @@
 .filters-container {
+  max-width: 720px;
+  margin: 0 auto;
+
   ul {
     display: flex;
     column-gap: 20px;
@@ -6,6 +9,10 @@
     list-style: none;
     align-items: center;
     text-align: center;
+    display: flex;
+    row-gap: 15px;
+    flex-wrap: wrap;
+    padding-left: 0;
 
     li {
       width: 100px;
