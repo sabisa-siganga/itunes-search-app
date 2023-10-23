@@ -44,6 +44,7 @@
       "last 1 safari version"
     ]
   },
+  "proxy": "https://pd7yqt-3001.csb.app",
   "devDependencies": {
     "@types/react-test-renderer": "^18.0.5"
   }
