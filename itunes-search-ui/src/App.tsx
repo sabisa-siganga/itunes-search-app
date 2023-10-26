@@ -4,6 +4,11 @@ import SearchBar from "./components/searchBar/searchBar";
 import Filters from "./components/filters/filters";
 import SearchResult, { Result } from "./components/searchResult/searchResult";
 
+/**
+ * Creating the full stack app that interfaces with the ituunes search api.
+ * Allow the user to search for content and is able to add items to favourites and delete them as well
+ */
+
 function App() {
   // states
   const [showFavourites, setshowFavourites] = useState(false);
