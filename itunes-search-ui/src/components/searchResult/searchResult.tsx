@@ -52,7 +52,7 @@ function SearchResult(props: Props) {
    */
   async function onAdd() {
     try {
-      const response = await fetch("/favourites", {
+      await fetch("/favourites", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
